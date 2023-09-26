@@ -6,14 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "coralmc"
 version = "0.0.1"
 authors = [
-  { name="letruxux", email=""}, {name="gigantino",email=""}
+  { name="letruxux", email="" }
 ]
 description = "A Python module to interact with the CoralMC API"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 

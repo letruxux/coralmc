@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: coralmc
-Version: 0.0.2
+Version: 0.0.3
 Summary: A Python module to interact with the CoralMC API
 Author-email: letruxux <letruxux.t@gmail.com>
 Project-URL: Homepage, https://github.com/letruxux/coralmc
@@ -8,6 +8,7 @@ Project-URL: Bug Tracker, https://github.com/letruxux/coralmc/issues
 Project-URL: JS/TS Version, https://github.com/gigantino/coralmc
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
+Requires: aiohttp
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 

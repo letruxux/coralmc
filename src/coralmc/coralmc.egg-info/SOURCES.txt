@@ -1,6 +1,7 @@
 README.md
 coralmc.py
 pyproject.toml
+setup.py
 coralmc.egg-info/PKG-INFO
 coralmc.egg-info/SOURCES.txt
 coralmc.egg-info/dependency_links.txt

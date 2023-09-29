@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "coralmc"
 version = "0.0.1"
 authors = [
-  { name="letruxux", email="" }
+  { name="letruxux", email="letruxux.t@gmail.com" }
 ]
 description = "A Python module to interact with the CoralMC API"
 readme = "README.md"

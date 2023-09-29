@@ -1,16 +1,16 @@
-import aiohttp
-import re
+import aiohttp as _aiohttp
+import re as _re
 
 
 def isUsernameValid(username):
-    return 3 <= len(username) <= 16 and bool(re.match("^[a-zA-Z0-9_]+$", username))
+    return 3 <= len(username) <= 16 and bool(_re.match("^[a-zA-Z0-9_]+$", username))
 
 
 async def getPlayerStats(username):
     if not isUsernameValid(username):
         return None
 
-    async with aiohttp.ClientSession() as session:
+    async with _aiohttp.ClientSession() as session:
         async with session.get(
             f"https://api.coralmc.it/api/user/{username}"
         ) as response:
@@ -51,7 +51,7 @@ async def getPlayerStats(username):
 
 
 def getFormattedRank(raw_rank):
-    formatted_rank = re.sub("[^A-Z]", "", raw_rank)
+    formatted_rank = _re.sub("[^A-Z]", "", raw_rank)
     return formatted_rank if formatted_rank else None
 
 
@@ -59,7 +59,7 @@ async def getPlayerInfo(username):
     if not isUsernameValid(username):
         return None
 
-    async with aiohttp.ClientSession() as session:
+    async with _aiohttp.ClientSession() as session:
         async with session.get(
             f"https://api.coralmc.it/api/user/{username}/infos"
         ) as response:

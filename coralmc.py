@@ -2,12 +2,12 @@ import aiohttp as _aiohttp
 import re as _re
 
 
-def isUsernameValid(username):
+def _isUsernameValid(username):
     return 3 <= len(username) <= 16 and bool(_re.match("^[a-zA-Z0-9_]+$", username))
 
 
 async def getPlayerStats(username):
-    if not isUsernameValid(username):
+    if not _isUsernameValid(username):
         return None
 
     async with _aiohttp.ClientSession() as session:
@@ -50,13 +50,13 @@ async def getPlayerStats(username):
     }
 
 
-def getFormattedRank(raw_rank):
+def _getFormattedRank(raw_rank):
     formatted_rank = _re.sub("[^A-Z]", "", raw_rank)
     return formatted_rank if formatted_rank else None
 
 
 async def getPlayerInfo(username):
-    if not isUsernameValid(username):
+    if not _isUsernameValid(username):
         return None
 
     async with _aiohttp.ClientSession() as session:
@@ -72,9 +72,9 @@ async def getPlayerInfo(username):
         "username": json_data["username"],
         "isBanned": json_data["isBanned"],
         "ranks": {
-            "global": getFormattedRank(json_data.get("globalRank")),
-            "bedwars": getFormattedRank(json_data.get("vipBedwars")),
-            "kitpvp": getFormattedRank(json_data.get("vipKitpvp")),
+            "global": _getFormattedRank(json_data.get("globalRank")),
+            "bedwars": _getFormattedRank(json_data.get("vipBedwars")),
+            "kitpvp": _getFormattedRank(json_data.get("vipKitpvp")),
             "raw": {
                 "global": json_data.get("globalRank"),
                 "bedwars": json_data.get("vipBedwars"),

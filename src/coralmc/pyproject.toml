@@ -1,19 +1,23 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel", "poetry-core>=1.0.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+aiohttp = "^3.0"
 
 [project]
 name = "coralmc"
 version = "0.0.4"
 description = "A Python module to interact with the CoralMC API"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/letruxux/coralmc"
-"Bug Tracker" = "https://github.com/letruxux/coralmc/issues"
-"JS/TS Version" = "https://github.com/gigantino/coralmc"
+Homepage = "https://github.com/letruxux/coralmc"
+Bug Tracker = "https://github.com/letruxux/coralmc/issues"
+JS/TS Version = "https://github.com/gigantino/coralmc"

@@ -6,6 +6,11 @@ def _isUsernameValid(username):
     return 3 <= len(username) <= 16 and bool(_re.match("^[a-zA-Z0-9_]+$", username))
 
 
+def _getFormattedRank(raw_rank):
+    formatted_rank = _re.sub("[^A-Z]", "", raw_rank)
+    return formatted_rank if formatted_rank else None
+
+
 async def getPlayerStats(username):
     if not _isUsernameValid(username):
         return None
@@ -48,11 +53,6 @@ async def getPlayerStats(username):
             "highestStreak": kitpvp.get("topstreak", 0),
         },
     }
-
-
-def _getFormattedRank(raw_rank):
-    formatted_rank = _re.sub("[^A-Z]", "", raw_rank)
-    return formatted_rank if formatted_rank else None
 
 
 async def getPlayerInfo(username):

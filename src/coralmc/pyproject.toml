@@ -18,6 +18,6 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/letruxux/coralmc"
-Bug Tracker = "https://github.com/letruxux/coralmc/issues"
-JS/TS Version = "https://github.com/gigantino/coralmc"
+"Homepage" = "https://github.com/letruxux/coralmc"
+"Bug Tracker" = "https://github.com/letruxux/coralmc/issues"
+"JS/TS Version" = "https://github.com/gigantino/coralmc"

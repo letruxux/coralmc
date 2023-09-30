@@ -26,7 +26,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: python-package-distributions
-        path: stc/coralmc/dist/
+        path: src/coralmc/dist/
 
   publish-to-testpypi:
     name: Publish Python 🐍 distribution 📦 to TestPyPI

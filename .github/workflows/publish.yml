@@ -20,13 +20,13 @@ jobs:
         build
         --user
     - name: Build a binary wheel and a source tarball
-      working-directory: ./src/coralmc
+      working-directory: src/coralmc
       run: python3 -m build
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
         name: python-package-distributions
-        path: src/coralmc/dist/
+        path: stc/coralmc/dist/
 
   publish-to-testpypi:
     name: Publish Python 🐍 distribution 📦 to TestPyPI
@@ -36,7 +36,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/<package-name>
+      url: https://test.pypi.org/p/coralmc
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing

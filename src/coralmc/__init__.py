@@ -1,0 +1,1 @@
+"A [Python](https://python.org) module that allows you to interact with the [CoralMC](https://coralmc.it/) API."

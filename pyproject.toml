@@ -8,7 +8,7 @@ aiohttp = "^3.0"
 
 [project]
 name = "coralmc"
-version = "0.0.4"
+version = "0.1.0"
 description = "A Python module to interact with the CoralMC API"
 readme = "README.md"
 requires-python = ">=3.8"

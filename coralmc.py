@@ -7,6 +7,8 @@ def _isUsernameValid(username):
 
 
 def _getFormattedRank(raw_rank):
+    if raw_rank is None:
+        return None
     formatted_rank = _re.sub("[^A-Z]", "", raw_rank)
     return formatted_rank if formatted_rank else None
 
@@ -24,9 +26,7 @@ async def getPlayerStats(username):
     bedwars: dict = json_data.get("bedwars", {})
     kitpvp: dict = json_data.get("kitpvp", {})
 
-    if not all(
-        bedwars.get(field) for field in ["name", "displayName"]
-    ) or not kitpvp.get("displayName"):
+    if json_data.get("error") is not None:
         return None
 
     return {
@@ -70,7 +70,7 @@ async def getPlayerInfo(username):
 
     return {
         "username": json_data["username"],
-        "isBanned": json_data["isBanned"],
+        "isBanned": json_data.get("isBanned", False),
         "ranks": {
             "global": _getFormattedRank(json_data.get("globalRank")),
             "bedwars": _getFormattedRank(json_data.get("vipBedwars")),

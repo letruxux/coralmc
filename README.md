@@ -8,7 +8,7 @@ CoralMC's API is still in alpha and isn't documented. In the future an access to
 
 ## Installation
 ```py
-python -m pip install 'coralmc @ git+https://github.com/letruxux/coralmc'
+python -m pip install coralmc
 ```
 
 ## Example usage

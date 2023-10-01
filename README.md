@@ -47,3 +47,6 @@ async def main():
 
 asyncio.run(main())
 ```
+## Links
+* [PyPi](https://pypi.org/p/coralmc)
+* [JS/TS](https://github.com/gigantino/CoralMC)

@@ -12,41 +12,34 @@ python -m pip install coralmc
 ```
 
 ## Example usage
-Get basic player info:
 ```py
 import coralmc
 import asyncio
 
 async def main():
+    client = coralmc.CoralMCClient()
     try:
-        playerInfo = await coralmc.getPlayerInfo("Feryzz")
-        if playerInfo:
-            print(playerInfo)
+        player_info = await client.get_player_info("Feryzz")
+        if player_info:
+            print(player_info)
+        else:
+            print("Player not found!")
+
+        player_stats = await client.get_player_stats("Feryzz")
+        if player_stats:
+            print(player_stats["kitpvp"])
+            print(player_stats["bedwars"])
         else:
             print("Player not found!")
     except Exception as error:
         print(f"Error: {error}")
+    finally:
+        await client.close()  # Ensure the session is closed
 
 asyncio.run(main())
-```
-Get player stats:
-```py
-import coralmc
-import asyncio
 
-async def main():
-    try:
-        playerStats = await coralmc.getPlayerStats("Feryzz")
-        if playerStats:
-            print(playerStats["kitpvp"])
-            print(playerStats["bedwars"])
-        else:
-            print("Player not found!")
-    except Exception as error:
-        print(f"Error: {error}")
-
-asyncio.run(main())
 ```
+
 ## Links
 * [PyPi](https://pypi.org/p/coralmc)
 * [JS/TS](https://github.com/gigantino/CoralMC)
